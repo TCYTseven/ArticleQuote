@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArticleQuote Editor</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="preview-area">
+            <canvas id="quoteCanvas" width="1200" height="630"></canvas>
+            <div class="actions">
+                <button id="downloadBtn">Download PNG</button>
+                <button id="copyImageBtn">Copy Image</button>
+                <button id="copyTextBtn">Copy Text</button>
+            </div>
+        </div>
+        <div class="controls-area">
+            <div class="header">
+                <div class="logo-section">
+                    <img src="ArticleQuoteLogo.png" alt="ArticleQuote Logo" class="logo">
+                    <h2>ArticleQuote Editor</h2>
+                </div>
+                <div class="social">
+                    <a href="https://buymeacoffee.com/tejastech" target="_blank" title="Buy Me a Coffee">☕</a>
+                    <a href="https://x.com/tejas7c" target="_blank" title="Follow on X/Twitter">X</a>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Appearance</h3>
+                <label for="bgSelect">Background</label>
+                <select id="bgSelect">
+                    <option value="linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)" selected>Soft Purple (Default)
+                    </option>
+                    <option value="transparent">Transparent</option>
+                    <option value="#000000">Black</option>
+                    <option value="#1a1a1a">Dark Gray</option>
+                    <option value="#4a4a4a">Gray</option>
+                    <option value="#ffffff">White</option>
+                    <option value="linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)">Warm Gradient</option>
+                    <option value="linear-gradient(to right, #43e97b 0%, #38f9d7 100%)">Minty Fresh</option>
+                    <option value="linear-gradient(to top, #30cfd0 0%, #330867 100%)">Deep Ocean</option>
+                </select>
+
+                <label for="bgScale">Gradient Scale: <span id="bgScaleVal">100</span>%</label>
+                <input type="range" id="bgScale" min="50" max="200" value="100">
+            </div>
+
+            <div class="control-group">
+                <h3>Card Settings</h3>
+                <label for="cardWidth">Width: <span id="cardWidthVal">90</span>%</label>
+                <input type="range" id="cardWidth" min="50" max="95" value="90">
+
+                <label for="cardHeight">Height: <span id="cardHeightVal">85</span>%</label>
+                <input type="range" id="cardHeight" min="50" max="95" value="85">
+
+                <label for="borderRadius">Border Radius: <span id="borderRadiusVal">30</span>px</label>
+                <input type="range" id="borderRadius" min="0" max="100" value="30">
+            </div>
+
+            <div class="control-group">
+                <h3>Typography</h3>
+                <label for="fontSelect">Font Family</label>
+                <select id="fontSelect">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                </select>
+
+                <label for="fontSize">Font Size: <span id="fontSizeVal">48</span>px</label>
+                <input type="range" id="fontSize" min="20" max="100" value="48">
+
+                <label for="lineSpacing">Line Spacing: <span id="lineSpacingVal">1.5</span></label>
+                <input type="range" id="lineSpacing" min="1" max="3" step="0.1" value="1.5">
+
+                <label class="checkbox-label">
+                    <input type="checkbox" id="italicsToggle">
+                    Italicize All Text
+                </label>
+            </div>
+
+            <div class="control-group">
+                <h3>Rich Text</h3>
+                <label for="highlightText">Highlight Phrases</label>
+                <input type="text" id="highlightText" placeholder="Phrases to highlight, comma-separated">
+
+                <label class="checkbox-label" style="margin-bottom: 15px;">
+                    <input type="checkbox" id="highlightAllToggle" checked>
+                    Highlight All Occurrences
+                </label>
+
+                <div class="color-options" style="margin-bottom: 15px;">
+                    <input type="radio" name="highlightColor" value="#FFD700" id="hYellow" checked><label for="hYellow"
+                        class="color-box yellow"></label>
+                    <input type="radio" name="highlightColor" value="#ADD8E6" id="hBlue"><label for="hBlue"
+                        class="color-box blue"></label>
+                    <input type="radio" name="highlightColor" value="#FFB6C1" id="hPink"><label for="hPink"
+                        class="color-box pink"></label>
+                </div>
+
+                <label for="boldText">Bold Phrases</label>
+                <input type="text" id="boldText" placeholder="Phrases to bold, comma-separated">
+
+                <label for="underlineText">Underline Phrases</label>
+                <input type="text" id="underlineText" placeholder="Phrases to underline, comma-separated">
+            </div>
+
+            <div class="control-group">
+                <h3>Citation</h3>
+                <label for="citationStyle">Citation Style</label>
+                <select id="citationStyle">
+                    <option value="mla">MLA Style</option>
+                    <option value="url">URL Only</option>
+                    <option value="none">Hidden</option>
+                </select>
+
+                <label class="toggle-switch">
+                    <span>Show Timestamp</span>
+                    <input type="checkbox" id="timestampToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+    </div>
+    <script src="editor.js"></script>
+</body>
+
+</html>

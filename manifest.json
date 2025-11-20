@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "ArticleQuote",
+  "version": "1.0",
+  "description": "Create beautiful, shareable quote images from text on any webpage.",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ArticleQuote - How to use"
+  }
+}
